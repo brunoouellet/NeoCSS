@@ -1,0 +1,24 @@
+/// Mixin helper to output vendor-prefixed CSS
+/// @author HugoGiraudel
+/// @param {String} $property - Unprefixed CSS property
+/// @param {*} $value - Raw CSS value
+/// @param {List} $prefixes [()] - List of prefixes to output
+@mixin prefix($property, $value, $prefixes: ()) {
+  @each $prefix in $prefixes {
+    -#{$prefix}-#{$property}: $value;
+  }
+  #{$property}: $value;
+}
+
+@mixin sides($option, $nb) {
+  #{$option}: {
+    left:  $nb;
+    right: $nb;
+  };
+}
+@mixin vertical($option, $nb) {
+  #{$option}: {
+    top:  $nb;
+    bottom: $nb;
+  };
+}

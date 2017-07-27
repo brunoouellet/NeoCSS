@@ -1,6 +1,7 @@
-@import "../json/styles.json";
+//Normalize default styles across all browsers
+@import "vendor/normalize";
 
-body {
-  color: map-get($colors, red);
-  font: 'Helvetica';
-}
+@import "helpers/functions";
+@import "helpers/mixins";
+
+@import "vendor/swagrid/swagrid";
