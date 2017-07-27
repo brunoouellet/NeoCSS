@@ -1,0 +1,6 @@
+@import "../json/styles.json";
+
+body {
+  color: map-get($colors, red);
+  font: 'Helvetica';
+}
