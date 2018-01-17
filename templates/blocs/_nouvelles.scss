@@ -1,0 +1,92 @@
+.container-nouvelles {
+    .entry-nouvelles:nth-child(even) {
+        background-color: $colorTertiary;
+    }
+}
+.wrapper-nouvelles {
+    max-width: $siteWidth;
+    @include sides(margin, auto);
+    padding-top: 20px;
+    padding-bottom: 25px;
+    @extend %clearfix;
+    position: relative;
+}
+
+.date-nouvelles {
+    color: $colorSecondary;
+    font-family: $fontSecondary;
+    font-weight: $black;
+}
+.jour-nouvelles {
+    font-size: 50px;
+}
+.mois-nouvelles {
+    font-size: 25px;
+}
+.ligne-nouvelles {
+    width: 75px;
+    padding-top: 25px;
+    @include sides(margin, 20px);
+    border-bottom: 1px solid $colorSecondary;
+}
+.titre-nouvelles {
+    padding-top: 18px;
+}
+.date-nouvelles, .ligne-nouvelles, .titre-nouvelles {
+    float: left;
+}
+.plus-nouvelles {
+    position: absolute;
+    right: 0;
+    top: 25px;
+}
+
+//PAGE NOUVELLE SINGLE
+
+.nouvelle {
+    .inner {
+        padding-top: 55px;
+    }
+}
+
+.header-nouvelle {
+    padding-bottom: 40px;
+    @extend %clearfix;
+}
+
+.image-nouvelle {
+    img {
+        width: 100%;
+    }
+}
+
+.liens-partage {
+    margin-bottom: 45px;
+    a {
+        @include link($colorPrimary);
+        margin-right: 20px;
+        cursor: pointer;
+    }
+}
+
+.lien-retour {
+    svg {
+        position: absolute;
+        @extend %arrow;
+    }
+    .retour {
+        margin-left: 30px;
+    }
+    a {
+        @include link($colorSecondary, $colorPrimary);
+        &:hover {
+            svg {
+                @extend %arrow-hover;
+            }
+        }
+    }
+}
+
+.texte-nouvelle {
+    margin-bottom: 145px;
+}

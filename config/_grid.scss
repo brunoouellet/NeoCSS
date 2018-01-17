@@ -1,0 +1,11 @@
+// Prefix you want to use in your markup. Ex: <div class="col-1-3">
+$prefix: col;
+
+// Space between two elements, in PX
+$gutter: 30px;
+
+// Maximum number of subdivisions
+$max: 6;
+
+// Class name of the container
+$container: outer;

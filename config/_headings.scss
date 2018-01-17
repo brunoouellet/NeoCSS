@@ -1,0 +1,32 @@
+//HEADINGS CONFIG
+$headingFont: $fontSecondary;
+$headingColor: $colorSecondary;
+
+
+$headings: (
+    (
+      tag: h1,
+      font: $headingFont,
+      size: 110px,
+      weight: $black,
+      color: $colorTertiary
+    ), (
+      tag: h2,
+      font: $headingFont,
+      size: 35px,
+      weight: $bold,
+      color: $headingColor
+    ), (
+      tag: h3,
+      font: $headingFont,
+      size: 18px,
+      weight: $black,
+      color: $colorPrimary
+    ), (
+      tag: h4,
+      font: $headingFont,
+      size: 35px,
+      weight: $bold,
+      color: $colorPrimary
+    )
+);

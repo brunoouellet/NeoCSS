@@ -1,0 +1,27 @@
+//COLORS CONFIG
+
+//Basic colors
+$wt: #fff;
+$bk: #000;
+
+$colorPrimary: #2d2a29 !default;
+$colorSecondary: #fd785e !default;
+$colorTertiary: #eeeeee !default;
+
+$arsenalJaune: #bb8d2d;
+$arsenalGris: #9e9e9e;
+
+
+$colorText: $colorPrimary !default;
+
+//Links colors
+$colorLink: $colorSecondary !default;
+$colorLinkHover: $colorLink;
+$colorLinkActive: $colorLink;
+$colorLinkVisited: $colorLink;
+
+//Social links colors
+$facebook: #3b5998;
+$twitter: #55acee;
+$youtube: #bb0000;
+$instagram: #bc2a8d;

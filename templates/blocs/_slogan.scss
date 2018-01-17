@@ -1,0 +1,16 @@
+.slogan {
+    .inner {
+        padding-top: 65px;
+        padding-bottom: 105px;
+    }
+}
+
+.texte-slogan {
+    font-family: $fontSecondary;
+    font-weight: $bold;
+    font-size: 45px;
+    color: $colorPrimary;
+    &.couleur {
+        color: $colorSecondary;
+    }
+}

@@ -1,0 +1,187 @@
+//MIXINS
+@mixin font($size:false, $family:false, $weight:false, $transform:false, $color:false, $lh:false, $style:false, $deco:false) {
+	@if $family { font-family: $family; }
+	@if $size { font-size: $size; }
+	@if $weight { font-weight: $weight; }
+	@if $transform { text-transform: $transform; }
+	@if $color { color: $color; }
+	@if $lh { line-height: $lh; }
+	@if $style { font-style: $style; }
+	@if $deco { text-decoration: $deco; }
+}
+
+@mixin headings($to: 4, $from: 1)
+{
+  @for $i from $from through $to{
+    h#{$i}{
+      @content;
+    }
+  }
+}
+
+@mixin link($link:false, $hover:false, $active:false)
+{
+	color: if($link, $link, $colorLink);
+	&:hover {
+		color: if($hover, $hover, $colorLinkHover);
+	}
+	&:active {
+		color: if($active, $active, $colorLinkActive);
+	}
+
+}
+
+//TEXT
+body {
+  font-size: $fontBase;
+}
+
+//Loop declaring heading tags based on the configs from config/headings
+//Also creates a placeholder named after the tag
+//Use like:
+// .my-class {
+//   @extend %h2;
+// }
+@each $heading in $headings {
+  #{map-get($heading, tag)} {
+    font-family: map-get($heading, font);
+    font-size: map-get($heading, size);
+    font-weight: map-get($heading, weight);
+    color: map-get($heading, color);
+  }
+  %#{map-get($heading, tag)} {
+    font-family: map-get($heading, font);
+    font-size: map-get($heading, size);
+    font-weight: map-get($heading, weight);
+    color: map-get($heading, color);
+  }
+}
+
+h3 {
+	text-transform: uppercase;
+}
+
+.gros_titre {
+	@extend h1;
+}
+
+.moyen_titre {
+	@extend h2;
+}
+
+.petit_titre {
+	@extend h3;
+}
+
+.sous_titre {
+	@extend h4;
+}
+
+.couleur {
+	color: $colorSecondary;
+}
+
+%paragraphe {
+	line-height: 25px;
+	margin-bottom: 50px;
+	&:last-of-type {
+		margin-bottom: 0;
+	}
+}
+
+body {
+	> p {
+		@extend %paragraphe;
+	}
+	> ul {
+		padding-top: 10px;
+		> li {
+			margin-bottom: 10px;
+			&:before {
+				content: "•";
+				color: $colorPrimary;
+				padding-left: 16px;
+				padding-right: 14px;
+				font-size: 38px;
+				line-height: 18px;
+				position: relative;
+				top: 8px;
+			}
+		}
+	}
+}
+
+
+.generic {
+	h2 {
+		margin-bottom: 5px;
+	}
+	p, .texte {
+		@extend %paragraphe;
+	}
+	.sous_titre {
+		margin-bottom: 15px;
+	}
+	ul {
+		padding-top: 10px;
+		li {
+			margin-bottom: 10px;
+			&:before {
+				content: "•";
+				color: $colorPrimary;
+				padding-left: 16px;
+				padding-right: 14px;
+				font-size: 38px;
+				line-height: 18px;
+				position: relative;
+				top: 8px;
+			}
+		}
+	}
+}
+
+h1 {
+    text-transform: uppercase;
+}
+
+a {
+    @include link;
+    text-decoration: none;
+}
+
+.plus {
+	font-family: $fontSecondary;
+    font-weight: $light;
+	font-size: 55px;
+}
+
+%barre-hover {
+	&:after {
+		content: '';
+		bottom: -8px;
+		left: 0;
+		position: absolute;
+		@extend %barre-draw-hover;
+	    border-bottom: 1px solid $colorSecondary;
+	}
+}
+
+%barre {
+	position: relative;
+	&:after {
+		content: '';
+		@extend %barre-draw;
+	}
+	&:hover {
+		@extend %barre-hover;
+	}
+}
+
+.barre {
+	@extend %barre;
+}
+
+//LINKS
+%link {
+  @include link;
+}

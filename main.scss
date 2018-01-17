@@ -1,0 +1,44 @@
+//RESET CSS
+@import 'core/reset';
+
+//VENDORS
+@import 'vendor/sweetalert2/sweetalert2';
+@import 'vendor/animate/animate';
+@import 'vendor/magnific-popup/main';
+@import 'vendor/slick/slick';
+@import 'vendor/captionjs/main';
+
+//HELPERS
+@import 'helpers/imports';
+
+//PARAMÈTRES
+@import 'config/base';
+@import 'config/colors';
+@import 'config/fonts';
+@import 'config/headings';
+@import 'config/responsive';
+@import 'config/grid';
+
+//BASE
+@import 'core/base';
+
+//MODULES
+@import "modules/typography";
+@import "modules/responsive";
+@import 'modules/grid';
+@import 'modules/animations';
+@import 'modules/layout';
+@import 'modules/button';
+
+//TEMPLATES
+@import 'templates/header';
+@import 'templates/bandeau';
+@import 'templates/blocs/services';
+@import 'templates/blocs/realisations';
+@import 'templates/blocs/photoSide';
+@import 'templates/blocs/slogan';
+@import 'templates/blocs/nouvelles';
+@import 'templates/blocs/equipe';
+@import 'templates/blocs/carriere';
+@import 'templates/blocs/postulation';
+@import 'templates/footer';

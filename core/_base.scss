@@ -1,0 +1,115 @@
+@each $font in $fonts {
+    @include google-font(nth($font, 1), nth($font, 2));
+}
+
+html, body {
+	width:100%;
+	height:100%;
+	padding:0;
+	margin-left:0;
+	margin-right:0;
+	font-size:$fontBase;
+	font-family: $fontPrimary;
+	-webkit-font-smoothing: antialiased;
+}
+
+body{
+	position: relative;
+	overflow-x: hidden;
+	overflow-y: inherit;
+
+	&.noscroll{
+		overflow-y:hidden!important;
+	}
+}
+
+.limiter {
+	width: 100%;
+	max-width: calc(#{$siteWidth} + (#{$sitePadding} * 2));
+	margin: 0 auto;
+	position: relative;
+}
+
+section{
+	background-size:cover;
+}
+.wow {
+	visibility: hidden;
+}
+
+::selection {
+	color:$wt;
+}
+
+.wrapper {
+	min-height: 100%;
+	margin: 0 auto;
+}
+
+.overflow-hidden {
+	overflow: hidden;
+}
+
+img {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-user-drag: none;
+    user-drag: none;
+}
+
+
+/* Containers */
+
+.container {
+	width: auto;
+	height: auto;
+	padding:0;
+	margin:0;
+	position:relative;
+}
+
+.inner {
+    padding-bottom: $blocBottomPadding;
+}
+
+.wrap,
+.nav-inner,
+.inner{
+	width:auto;
+	height: auto;
+	max-width: $siteWidth;
+	position: relative;
+	margin: 0 auto;
+}
+.inner:after,
+.inner:before{
+	clear: both;
+}
+
+footer .inner {
+	max-width: $siteWidth;
+    padding: 0;
+}
+
+#siteContent section:last-of-type .inner {
+    padding-bottom: 0;
+}
+
+#siteContent section.generic:first-of-type {
+    padding-top: 25px;
+}
+
+#siteContent {
+    padding-top: 140px;
+}
+
+
+::selection{
+	background-color:$colorSecondary;
+}
+
+%clearfix {
+	@include clearfix;
+}

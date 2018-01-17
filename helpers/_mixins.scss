@@ -1,0 +1,99 @@
+@mixin prefix($property, $value, $prefixes: ()) {
+  @each $prefix in $prefixes {
+    -#{$prefix}-#{$property}: $value;
+  }
+  #{$property}: $value;
+}
+
+@mixin sides($option, $nb) {
+  #{$option}: {
+    left:  $nb;
+    right: $nb;
+  };
+}
+
+@mixin vertical($option, $nb) {
+  #{$option}: {
+    top:  $nb;
+    bottom: $nb;
+  };
+}
+
+@mixin displayFlex(){
+	display: -webkit-box;  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+	display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */
+	display: -ms-flexbox;  /* TWEENER - IE 10 */
+	display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+	display: flex;
+}
+
+@mixin alignItems($value: center){
+	-webkit-align-items: $value;
+	-webkit-flex-align: $value;
+	-webkit-box-align: $value;
+	-ms-flex-align: $value;
+	align-items: $value;
+}
+
+@mixin flexWrap($value: wrap){
+	-ms-flex-wrap: $value;
+	-webkit-flex-wrap: $value;
+	flex-wrap: $value;
+}
+
+@mixin middle() {
+	@include displayFlex();
+	@include alignItems();
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+    flex-direction: column;
+	justify-content: center;
+}
+
+@mixin rotate($value) {
+	-webkit-transform: rotate($value);
+	-moz-transform: rotate($value);
+	-ms-transform: rotate($value);
+	-o-transform: rotate($value);
+	transform: rotate($value);
+}
+
+@mixin bgcover() {
+	-webkit-background-size: cover;
+	background-size: cover;
+	-webkit-background-position: center center;
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+
+
+//Author: Guil Hernandez
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin google-font($family: false, $sizes: ()) {
+  $family: str-replace($family, ' ', '+');
+  $url: 'https://fonts.googleapis.com/css?family=#{$family}:';
+  $i: 0;
+  @each $size in $sizes {
+      $i: $i + 1;
+      $url: $url + '#{$size}';
+      @if($i < length($sizes))
+      {
+          $url: $url + ',';
+      }
+  }
+  @at-root {
+    @import url('#{$url}');
+  }
+ }
+
+
+@mixin z-index($key) {
+    z-index: z-index($key);
+}

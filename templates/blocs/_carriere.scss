@@ -1,0 +1,84 @@
+.texte-carrieres {
+    margin-bottom: 90px;
+}
+
+.accordion {
+    border: 1px solid $colorSecondary;
+    color: $colorSecondary;
+    padding: 20px 30px;
+    margin-top: 25px;
+    position: relative;
+    @include basictransition;
+    &:hover {
+        cursor: pointer;
+        background-color: $colorSecondary;
+        color: $wt;
+    }
+    &:first-child {
+        margin-top: 0;
+    }
+    &.active {
+        background-color: $colorSecondary;
+        color: $wt;
+    }
+    .titre-emploi {
+        font-family: $fontSecondary;
+        font-size: 25px;
+        font-weight: $medium;
+    }
+    .plus-emploi {
+        position: absolute;
+        right: 28px;
+        top: 10%;
+    }
+}
+.texte-emploi {
+    margin-top: 45px;
+    margin-bottom: 50px;
+}
+.panel {
+    display: none;
+}
+.container-competences {
+    .note {
+        font-size: 15px;
+    }
+    .col-left {
+        box-sizing: border-box;
+        padding-left: 50px;
+    }
+    .boite {
+        padding-left: 85px;
+        margin-bottom: 40px;
+        background-repeat: no-repeat;
+        .petit_titre {
+            margin-bottom: 15px;
+        }
+    }
+    .texte- {
+        @at-root #{&}debut {
+            background-image:url('../../images/icones_carriere/date.png');
+        }
+        @at-root #{&}horaire {
+            background-image:url('../../images/icones_carriere/sablier.png');
+        }
+        @at-root #{&}experience {
+            background-image:url('../../images/icones_carriere/calendrier.png');
+        }
+        @at-root #{&}formation {
+            background-image:url('../../images/icones_carriere/chapeau.png');
+        }
+        @at-root #{&}exigence {
+            background-image:url('../../images/icones_carriere/danger.png');
+        }
+        @at-root #{&}competence {
+            background-image:url('../../images/icones_carriere/tete.png');
+        }
+        @at-root #{&}atout {
+            background-image:url('../../images/icones_carriere/cerveau.png');
+        }
+        @at-root #{&}salaire {
+            background-image:url('../../images/icones_carriere/tirelire.png');
+        }
+    }
+}

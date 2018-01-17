@@ -1,0 +1,12 @@
+.offset {
+    position: relative;
+    left: -20px;
+    line-height: 102px;
+    width: 55%;
+    &.offset-large {
+        width: 70%;
+    }
+}
+#bandeauPage {
+    padding-top: 45px;
+}

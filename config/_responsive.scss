@@ -1,0 +1,15 @@
+//RESPONSIVE CONFIG
+
+// Breakpoints namespace
+$xs: xs;
+$sm: sm;
+$md: md;
+$lg: lg;
+
+// Breakpoints values
+$breakpoints: (
+  $xs: 0,
+  $sm: 568px,
+  $md: 768px,
+  $lg: 1024px
+);

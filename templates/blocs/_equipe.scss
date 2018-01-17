@@ -1,0 +1,119 @@
+.equipe {
+    padding-top: 45px;
+}
+
+.images-membre {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 30px;
+    &:hover {
+        .image-membre {
+            opacity: 0;
+            @include basictransition(600ms);
+        }
+        .image-alt-membre {
+            opacity: 1;
+            @include basictransition(600ms);
+        }
+    }
+    .image-membre {
+        opacity: 1;
+        @include basictransition(600ms);
+    }
+    .image-alt-membre {
+        opacity: 0;
+        @include basictransition(600ms);
+    }
+}
+
+.image-membre {
+    position: absolute;
+}
+
+
+.infos-membre {
+    text-align: center;
+    .nom-membre, .poste-membre {
+        margin-bottom: 12px;
+    }
+    .poste-membre {
+        font-size: 15px;
+        line-height: 20px;
+    }
+    .email-membre {
+        a {
+            @include link($colorPrimary);
+            cursor: pointer;
+        }
+    }
+}
+
+.container-membre {
+    padding-bottom: 72px;
+}
+
+$equipeRouge: rgba(168,48,28,0.82);
+
+#formEquipe {
+	display: none;
+	width:50%;
+	margin:auto;
+	padding:50px;
+	background-color:#FFFFFF;
+	border:1px solid $colorPrimary;
+	text-align:center;
+
+	h3{
+		padding-top:0;
+		font-family: $fontSecondary;
+		text-transform: uppercase;
+	}
+	#destinataire{
+		margin-bottom:30px;
+		text-transform: uppercase;
+	}
+
+    .equipe-recaptcha {
+        @include vertical(padding, 20px);
+        div {
+            margin: auto;
+        }
+    }
+
+    input, textarea {
+        margin-top: 8px;
+    }
+
+
+	#messageRetour.success{ color:#42b569; }
+	#messageRetour.error{ color:#fff; }
+    .row{
+  		display:block;
+  		text-align:center;
+
+  		textarea{ height:110px; }
+
+  		textarea,
+  		input[type=text]{
+  			width:80%;
+  			padding:4px;
+  			margin-bottom:5px;
+  			font-family:$fontPrimary;
+  		}
+  		.bouton{ margin:0 auto; }
+
+  		input[type=file]{ width:50%; display:inline-block; }
+
+  		input.error,textarea.error,select.error, .bouton.error{
+  			border:1px solid $equipeRouge !important;
+  			// color:$equipeRouge !important;
+       		background-color: rgba(168, 48, 28, 0.2) !important;
+  		}
+  		input[type=text].error::-webkit-input-placeholder,textarea.error::-webkit-input-placeholder{
+  			color:$equipeRouge;
+  		}
+
+  		textarea{ max-width:80%;}
+  	}
+
+}

@@ -1,0 +1,25 @@
+.photoSide {
+    padding-top: 25px;
+    &.left {
+        .texte-photoSide {
+            order: 1;
+        }
+        .image-photoSide {
+            order: 2;
+        }
+    }
+    &.right {
+        .texte-photoSide {
+            order: 2;
+        }
+        .image-photoSide {
+            order: 1;
+        }
+    }
+}
+
+.image-photoSide {
+    img {
+        width: 100%;
+    }
+}

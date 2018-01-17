@@ -1,0 +1,45 @@
+//RESPONSIVE BREAKPOINTS
+
+//FUNCTIONS
+@function breakpointSize($bp)
+{
+  @if type-of($bp) == number {
+    @return $bp;
+  }
+  @else if type-of($bp) == string {
+    @if map-get($breakpoints, $bp) {
+      @return map-get($breakpoints, $bp);
+    }
+    @else {
+      @error "This breakpoint is not defined in $breakpoints";
+    }
+  }
+  @else {
+    @error "The media query mixin does not accept this data type as a parameter";
+  }
+}
+
+@function mediaQuery($max, $min) {
+  $query: "";
+  @if $min != 0 and $max == 0 {
+    $query: "(min-width: #{$min})";
+  }
+  @else if $min == 0 and $max != 0 {
+    $query: "(max-width: #{$max})";
+  }
+  @else {
+    $query: "(min-width: #{$min}) and (max-width: #{$max})";
+  }
+  @return $query;
+}
+
+//MIXINS
+@mixin mq($max:0, $min:0)
+{
+  $min: breakpointSize($min);
+  $max: breakpointSize($max);
+  $query: mediaQuery($max, $min);
+  @media only screen and #{$query} {
+    @content;
+  }
+}

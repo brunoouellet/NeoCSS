@@ -1,0 +1,77 @@
+/// Mixin helper to output animation keyframes
+/// @param {String} $animation-name - Name of the animation
+@mixin keyframes($animation-name) {
+  @-webkit-keyframes #{$animation-name} {
+      @content;
+  }
+  @-moz-keyframes #{$animation-name} {
+      @content;
+  }
+  @-ms-keyframes #{$animation-name} {
+      @content;
+  }
+  @-o-keyframes #{$animation-name} {
+      @content;
+  }
+  @keyframes #{$animation-name} {
+      @content;
+  }
+}
+
+@mixin animation($str) {
+  @include prefix(animation, #{$str}, 'webkit' 'moz' 'ms' 'o');
+}
+
+@mixin basictransition($duration:300ms) {
+  @include prefix(transition, all $duration ease, 'webkit' 'moz' 'ms' 'o');
+}
+
+@mixin transition($animation, $duration:300ms, $easing: ease) {
+  @include prefix(transition, $animation $duration $easing, 'webkit' 'moz' 'ms' 'o');
+}
+
+%highlight {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -7px;
+    @include basictransition;
+    padding: 0;
+    width: 0;
+    height: 14px;
+    background-color: rgba($colorSecondary, 0.22);
+}
+
+%barre-draw {
+	width: 0;
+    @include transition(width, 300ms, linear);
+}
+
+%barre-draw-hover {
+    width: 45%;
+    @include transition(width, 300ms, linear);
+}
+
+%service-plus {
+    transform: rotate(90deg) scale(1.3);
+    color: $colorPrimary;
+    @include basictransition;
+}
+
+%arrow {
+    left: 0;
+    @include transition(left, 300ms);
+}
+%arrow-hover {
+    left: -10px;
+    @include transition(left, 300ms);
+}
+
+%arrow-inv {
+    right: 0;
+    @include transition(right, 300ms);
+}
+%arrow-inv-hover {
+    right: -10px;
+    @include transition(right, 300ms);
+}
